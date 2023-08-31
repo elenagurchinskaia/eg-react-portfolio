@@ -4,32 +4,56 @@ function Navbar() {
   const currentPage = useLocation().pathname;
 
   return (
-    // <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    // <div className="container">
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <Link to="/" className={currentPage === "/" ? "nav-link active" : "nav-link"}>
+        <Link
+          to="/"
+          className={currentPage === "/" ? "nav-link active" : "nav-link"}
+        >
           home
-          </Link>
-          </li>
-        <a className="nav-link" href="#about">
+        </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link
+          to="/About"
+          className={currentPage === "/About" ? "nav-link active" : "nav-link"}
+        >
           about
-        </a>
-        <a className="nav-link" href="#portfolio">
+        </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link
+          to="/Portfolio"
+          className={
+            currentPage === "/Portfolio" ? "nav-link active" : "nav-link"
+          }
+        >
           portfolio
-        </a>
-        <a className="nav-link" href="#contacts">
+        </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link
+          to="/Contacts"
+          className={
+            currentPage === "/Contact" ? "nav-link active" : "nav-link"
+          }
+        >
           contacts
-        </a>
-        <a className="nav-link" href="#resume">
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/Resume"
+          className={currentPage === "/Resume" ? "nav-link active" : "nav-link"}
+        >
           resume
-        </a>
+        </Link>
       </li>
     </ul>
-    // </div>
-    // </nav>
   );
 }
 
-// make it links
 export default Navbar;

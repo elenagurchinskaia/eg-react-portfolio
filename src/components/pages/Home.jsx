@@ -1,9 +1,9 @@
 import Project from "../Project";
 
-function Portfolio() {
+function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      {/* <h1>Home</h1> */}
       <Project
         name={"Project1"}
         description={"This is my first project"}
@@ -38,4 +38,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default Home;
