@@ -1,11 +1,33 @@
+import { Link, useLocation } from "react-router-dom";
+
 function Navbar() {
+  const currentPage = useLocation().pathname;
+
   return (
-    <div>
-      <h3>about</h3>
-      <h3>portfolio</h3>
-      <h3>contacts</h3>
-      <h3>resume</h3>
-    </div>
+    // <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    // <div className="container">
+    <ul className="nav nav-tabs">
+      <li className="nav-item">
+        <Link to="/" className={currentPage === "/" ? "nav-link active" : "nav-link"}>
+          home
+          </Link>
+          </li>
+        <a className="nav-link" href="#about">
+          about
+        </a>
+        <a className="nav-link" href="#portfolio">
+          portfolio
+        </a>
+        <a className="nav-link" href="#contacts">
+          contacts
+        </a>
+        <a className="nav-link" href="#resume">
+          resume
+        </a>
+      </li>
+    </ul>
+    // </div>
+    // </nav>
   );
 }
 

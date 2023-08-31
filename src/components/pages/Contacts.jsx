@@ -9,10 +9,12 @@ function Contacts() {
   function handleFormSubmit(e) {
     // send an email to me
     // clear form
+    const emailAddress = "elenagurchinskaia@gmail.com";
+    // create a mailto link
     e.preventDefault();
   }
   function handleInputChange(e) {
-    //
+    setInput(e.target.value);
   }
   return (
     <form onSubmit={handleFormSubmit}>
