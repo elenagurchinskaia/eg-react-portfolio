@@ -2,16 +2,11 @@ import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import { validateEmail } from "../utils/helper";
 import emailjs from "emailjs-com";
-// import { useState } from "react";
-// import { set } from "mongoose";
-// import { response } from "express";
-// import Contacts from "./components/pages/Contacts";
 
 function Contacts() {
   const [input, setInput] = useState({
     name: "",
     email: "",
-    // subject: "",
     message: "",
   });
   const [formMessage, setFormMessage] = useState("");
@@ -51,13 +46,7 @@ function Contacts() {
         }
       );
   }
-
-  // console.log("form", {
-  //   name: input.name,
-  //   email: input.email,
-  //   message: input.message,
-  // });
-
+  // ------------------------------- handle input change ---------------------------------- //
   function handleInputChange(e) {
     const { name, value } = e.target;
     if (name === "email") {
@@ -76,43 +65,13 @@ function Contacts() {
       }
     }
     if (!formMessage) {
-      // setInput({ ...input, [e.target.name]: e.target.value });
       setInput({ ...input, [name]: value });
     }
   }
   return (
     <>
       <h1>Contacts</h1>
-      {/* <form onSubmit={handleFormSubmit}>
-        <label htmlFor="name-input">Name *</label>
-        <input
-          type="text"
-          id="name-input"
-          placeholder="Your Name..."
-          value={input.name}
-          onChange={handleInputChange}
-        ></input>
-        <label>Email Address *</label>
-        <input
-          type="text"
-          id="email-input"
-          value={input.email}
-          placeholder="Your Email..."
-          onChange={handleInputChange}
-        ></input>
-        <label>Message *</label>
-        <input
-          type="text"
-          id="message-input"
-          placeholder="Your Message..."
-          value={input.message}
-          onChange={handleInputChange}
-        ></input>
-        <button type="submit" id="submit-button">
-          Submit
-        </button>
-      </form> */}
-
+      {/* // ------------------------------- render ---------------------------------- // */}
       <ContactForm
         input={input}
         setInput={setInput}
