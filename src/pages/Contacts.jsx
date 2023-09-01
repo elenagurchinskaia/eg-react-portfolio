@@ -9,43 +9,62 @@ function Contacts() {
     email: "",
     message: "",
   });
+  // message state variable
   const [formMessage, setFormMessage] = useState("");
 
-  function handleFormSubmit(e) {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (!input.name || !input.email || !input.message) {
-      setFormMessage("All fields are required.");
+    if (!validateFields()) {
       return;
     }
+
     // send message to my email address using emailjs.com
-    emailjs
-      .sendForm(
+    try {
+      const result = await emailjs.sendForm(
         "service_2f4a7w9",
         "template_sn24tv3",
         e.target,
         "SAr6zD1n2ioYzmO7-"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // clear form after submission
-          setInput({
-            name: "",
-            email: "",
-            message: "",
-          });
-
-          setFormMessage("Your message was sent successfully!");
-        },
-        (error) => {
-          console.log(error.text);
-          setFormMessage(
-            "Your message was not sent. Please email me at elena@gmail.com"
-          );
-        }
       );
-  }
+      console.log(result.text);
+
+      // clear form after submission
+      setInput({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      // check if the email was sent successfully
+      if (result.status === 200) {
+        setFormMessage("Your message was sent successfully!");
+      } else {
+        setFormMessage(
+          "There was an issue sending your message. Please try again later."
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      setFormMessage(
+        "There was an error sending message. Please email me at elena@gmail.com"
+      );
+    }
+  };
+
+  const validateFields = () => {
+    if (!input.name || !input.email || !input.message) {
+      setFormMessage("All fields are required.");
+      return false;
+    }
+
+    if (!validateEmail(input.email)) {
+      setFormMessage("Please enter a valid email address.");
+      return false;
+    }
+
+    return true;
+  };
   // ------------------------------- handle input change ---------------------------------- //
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -79,6 +98,7 @@ function Contacts() {
         handleFormSubmit={handleFormSubmit}
         formMessage={formMessage}
       />
+      {formMessage && <div>{formMessage}</div>}
     </>
   );
 }
