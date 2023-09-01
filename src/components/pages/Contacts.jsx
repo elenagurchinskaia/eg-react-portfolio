@@ -1,15 +1,38 @@
 import { useState } from "react";
 import ContactForm from "../ContactForm";
-import { validateEmail } from "../utils/helpers";
+import { validateEmail } from "../../utils/helper";
+import { set } from "mongoose";
 // import Contacts from "./components/pages/Contacts";
 
 function Contacts() {
   const [input, setInput] = useState({
     name: "",
     email: "",
+    // subject: "",
     message: "",
   });
-function 
+  const [formMessage, setFormMessage] = useState("");
+
+  function handleInput(e) {
+    if (e.target.name === "email") {
+      const isValid = validateEmail(e.target.value);
+      console.log(isValid);
+      if (!isValid) {
+        setFormMessage("Your email is invalid.");
+      } else {
+        setFormMessage("");
+      }
+    } else {
+      if (!e.target.value.length) {
+        setFormMessage(`${e.target.name} is required.`);
+      } else {
+        setFormMessage("");
+      }
+    }
+    if (!formMessage) {
+      setInput({ ...input, [e.target.name]: e.target.value });
+    }
+  }
 
   function handleFormSubmit(e) {
     e.preventDefault();
