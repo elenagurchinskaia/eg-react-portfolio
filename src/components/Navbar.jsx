@@ -16,8 +16,8 @@ function Navbar() {
 
       <li className="nav-item">
         <Link
-          to="/About"
-          className={currentPage === "/About" ? "nav-link active" : "nav-link"}
+          to="/about"
+          className={currentPage === "/about" ? "nav-link active" : "nav-link"}
         >
           about
         </Link>
@@ -25,9 +25,9 @@ function Navbar() {
 
       <li className="nav-item">
         <Link
-          to="/Portfolio"
+          to="/portfolio"
           className={
-            currentPage === "/Portfolio" ? "nav-link active" : "nav-link"
+            currentPage === "/portfolio" ? "nav-link active" : "nav-link"
           }
         >
           portfolio
@@ -36,9 +36,9 @@ function Navbar() {
 
       <li className="nav-item">
         <Link
-          to="/Contact"
+          to="/contact"
           className={
-            currentPage === "/Contact" ? "nav-link active" : "nav-link"
+            currentPage === "/contact" ? "nav-link active" : "nav-link"
           }
         >
           contacts
@@ -46,8 +46,8 @@ function Navbar() {
       </li>
       <li className="nav-item">
         <Link
-          to="/Resume"
-          className={currentPage === "/Resume" ? "nav-link active" : "nav-link"}
+          to="/resume"
+          className={currentPage === "/resume" ? "nav-link active" : "nav-link"}
         >
           resume
         </Link>

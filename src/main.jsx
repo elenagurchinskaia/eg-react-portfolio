@@ -1,12 +1,12 @@
 // import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import Home from "./components/pages/Home.jsx";
-import About from "./components/pages/About.jsx";
-import Portfolio from "./components/pages/Portfolio.jsx";
-import Contacts from "./components/pages/Contacts.jsx";
-import Resume from "./components/pages/Resume.jsx";
-import Error from "./components/pages/Error.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Portfolio from "./pages/Portfolio.jsx";
+import Contacts from "./pages/Contacts.jsx";
+import Resume from "./pages/Resume.jsx";
+import Error from "./pages/Error.jsx";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

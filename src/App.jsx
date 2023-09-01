@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./components/pages/About";
-import Navbar from "./components/Navbar";
+// import About from "./components/pages/About";
+// import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Contacts from "./components/pages/Contacts";
+// import Contacts from "./components/pages/Contacts";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 

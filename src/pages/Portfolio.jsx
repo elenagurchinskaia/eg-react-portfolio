@@ -1,10 +1,10 @@
-import Project from "../Project";
-import projectImg1 from "../../assets/images/project-01_.png";
-import projectImg2 from "../../assets/images/project-02_.png";
-import projectImg3 from "../../assets/images/project-03.jpg";
-import projectImg4 from "../../assets/images/project-04.jpg";
-import projectImg5 from "../../assets/images/project-05.jpg";
-import projectImg6 from "../../assets/images/project-06.jpg";
+import Project from "../components/Project";
+import projectImg1 from "../assets/images/project-01_.png";
+import projectImg2 from "../assets/images/project-02_.png";
+import projectImg3 from "../assets/images/project-03.jpg";
+import projectImg4 from "../assets/images/project-04.jpg";
+import projectImg5 from "../assets/images/project-05.jpg";
+import projectImg6 from "../assets/images/project-06.jpg";
 
 function Portfolio() {
   return (

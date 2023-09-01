@@ -1,7 +1,8 @@
 import { useState } from "react";
-import ContactForm from "../ContactForm";
-import { validateEmail } from "../../utils/helper";
+import ContactForm from "../components/ContactForm";
+import { validateEmail } from "../utils/helper";
 import emailjs from "emailjs-com";
+// import { useState } from "react";
 // import { set } from "mongoose";
 // import { response } from "express";
 // import Contacts from "./components/pages/Contacts";
@@ -17,21 +18,29 @@ function Contacts() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
+
     if (!input.name || !input.email || !input.message) {
       setFormMessage("All fields are required.");
       return;
     }
-    // send an email to me
+    // send message to my email address using emailjs.com
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_2f4a7w9",
+        "template_sn24tv3",
         e.target,
-        "YOUR_PUBLIC_KEY"
+        "SAr6zD1n2ioYzmO7-"
       )
       .then(
         (result) => {
           console.log(result.text);
+          // clear form after submission
+          setInput({
+            name: "",
+            email: "",
+            message: "",
+          });
+
           setFormMessage("Your message was sent successfully!");
         },
         (error) => {
@@ -43,44 +52,34 @@ function Contacts() {
       );
   }
 
-  // window.location.href = mailtoLink;
+  // console.log("form", {
+  //   name: input.name,
+  //   email: input.email,
+  //   message: input.message,
+  // });
 
-  console.log("form", {
-    name: input.name,
-    email: input.email,
-    message: input.message,
-  });
-
-  // clear form after submission
-  setInput({
-    name: "",
-    email: "",
-    message: "",
-  });
-}
-
-function handleInputChange(e) {
-  const { name, value } = e.target;
-  if (name === "email") {
-    const isValid = validateEmail(e.target.value);
-    console.log(isValid);
-    if (!isValid) {
-      setFormMessage("Your email is invalid.");
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    if (name === "email") {
+      const isValid = validateEmail(value);
+      console.log(isValid);
+      if (!isValid) {
+        setFormMessage("Your email is invalid.");
+      } else {
+        setFormMessage("");
+      }
     } else {
-      setFormMessage("");
+      if (!value.length) {
+        setFormMessage(`${name} is required.`);
+      } else {
+        setFormMessage("");
+      }
     }
-  } else {
-    if (!value.length) {
-      setFormMessage(`${name} is required.`);
-    } else {
-      setFormMessage("");
+    if (!formMessage) {
+      // setInput({ ...input, [e.target.name]: e.target.value });
+      setInput({ ...input, [name]: value });
     }
   }
-  if (!formMessage) {
-    // setInput({ ...input, [e.target.name]: e.target.value });
-    setInput({ ...input, [name]: value });
-  }
-  // }
   return (
     <>
       <h1>Contacts</h1>
