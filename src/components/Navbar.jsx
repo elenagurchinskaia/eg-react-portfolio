@@ -36,7 +36,7 @@ function Navbar() {
 
       <li className="nav-item">
         <Link
-          to="/Contacts"
+          to="/Contact"
           className={
             currentPage === "/Contact" ? "nav-link active" : "nav-link"
           }

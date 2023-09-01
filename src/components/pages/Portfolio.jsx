@@ -7,7 +7,7 @@ function Portfolio() {
       <Project
         name={"Project1"}
         description={"This is my first project"}
-        image={"image1.jpg"}
+        image={"../assets/images/project-01_.png"}
       />
       <Project
         name={"Project2"}
