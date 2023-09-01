@@ -10,10 +10,10 @@ export default function ContactForm({
   return (
     <Form onSubmit={handleFormSubmit}>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Name</Form.Label>
+        <Form.Label>Name *</Form.Label>
         <Form.Control
           type="text"
-          placeholder="name"
+          placeholder="Your Name..."
           name="name"
           value={input.name}
           onChange={handleInputChange}
@@ -21,11 +21,11 @@ export default function ContactForm({
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Email Address *</Form.Label>
         <Form.Control
           type="email"
           name="email"
-          placeholder="Enter email"
+          placeholder="Your Email Address..."
           value={input.email}
           onChange={handleInputChange}
         />
@@ -35,11 +35,12 @@ export default function ContactForm({
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Example textarea</Form.Label>
+        <Form.Label>Message *</Form.Label>
         <Form.Control
           as="textarea"
           rows={5}
           name="message"
+          placeholder="Your Message..."
           value={input.message}
           onChange={handleInputChange}
         />

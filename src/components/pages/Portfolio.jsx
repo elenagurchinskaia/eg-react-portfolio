@@ -1,38 +1,44 @@
 import Project from "../Project";
+import projectImg1 from "../../assets/images/project-01_.png";
+import projectImg2 from "../../assets/images/project-02_.png";
+import projectImg3 from "../../assets/images/project-03.jpg";
+import projectImg4 from "../../assets/images/project-04.jpg";
+import projectImg5 from "../../assets/images/project-05.jpg";
+import projectImg6 from "../../assets/images/project-06.jpg";
 
 function Portfolio() {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>Projects</h1>
       <Project
-        name={"Project1"}
+        name={"Upstream Travel"}
         description={"This is my first project"}
-        image={"../assets/images/project-01_.png"}
+        image={projectImg1}
       />
       <Project
-        name={"Project2"}
+        name={"The Monkey's Cup"}
         description={"This is my second project"}
-        image={"image1.jpg"}
+        image={projectImg2}
       />
       <Project
         name={"Project3"}
         description={"This is my third project"}
-        image={"image1.jpg"}
+        image={projectImg3}
       />
       <Project
         name={"Project4"}
         description={"This is my fourth project"}
-        image={"image1.jpg"}
+        image={projectImg4}
       />
       <Project
         name={"Project5"}
         description={"This is my fifth project"}
-        image={"image1.jpg"}
+        image={projectImg5}
       />
       <Project
         name={"Project6"}
         description={"This is my sixth project"}
-        image={"image1.jpg"}
+        image={projectImg6}
       />
     </div>
   );
