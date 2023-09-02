@@ -35,3 +35,31 @@
 .resume-section a:hover {
   text-decoration: underline;
 }
+/* -------------------------- media query ----------------------------- */
+@media screen and (max-width: 768px) {
+  ul {
+    padding-left: 10px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+
+  ul {
+    padding-left: 10px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
