@@ -1,0 +1,28 @@
+/* footer styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
+  background-color: white;
+}
+
+/* style for the footer links */
+.footer a {
+  text-decoration: none;
+  margin: 0 15px;
+  color: #333;
+}
+
+/* style for the footer icons */
+.footer i {
+  font-size: 24px;
+}
+
+/* style for the icons on hover  */
+.footer i:hover {
+  color: grey;
+}

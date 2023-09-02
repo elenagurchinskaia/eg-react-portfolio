@@ -1,55 +1,78 @@
+import "../styles/navbar.css";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const [activeTab, setActiveTab] = useState("");
   const currentPage = useLocation().pathname;
+
+  // function to handle tab click and set the active tab
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  // define styles for the active and inactive links
+  const linkStyle = {
+    color: "black",
+  };
+
+  const activeLinkStyle = {
+    color: "grey", // text color when the tab is active
+  };
 
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link
           to="/"
-          className={currentPage === "/" ? "nav-link active" : "nav-link"}
+          className={`nav-link ${currentPage === "/" ? "active" : ""}`}
+          style={activeTab === "home" ? activeLinkStyle : linkStyle}
+          onClick={() => handleTabClick("home")}
         >
-          home
+          <span>Home</span>
         </Link>
       </li>
 
       <li className="nav-item">
         <Link
           to="/about"
-          className={currentPage === "/about" ? "nav-link active" : "nav-link"}
+          className={`nav-link ${currentPage === "/about" ? "active" : ""}`}
+          style={activeTab === "about" ? activeLinkStyle : linkStyle}
+          onClick={() => handleTabClick("about")}
         >
-          about
+          <span>About</span>
         </Link>
       </li>
 
       <li className="nav-item">
         <Link
           to="/portfolio"
-          className={
-            currentPage === "/portfolio" ? "nav-link active" : "nav-link"
-          }
+          className={`nav-link ${currentPage === "/portfolio" ? "active" : ""}`}
+          style={activeTab === "portfolio" ? activeLinkStyle : linkStyle}
+          onClick={() => handleTabClick("portfolio")}
         >
-          portfolio
+          <span>Portfolio</span>
         </Link>
       </li>
 
       <li className="nav-item">
         <Link
           to="/contact"
-          className={
-            currentPage === "/contact" ? "nav-link active" : "nav-link"
-          }
+          className={`nav-link ${currentPage === "/contacts" ? "active" : ""}`}
+          style={activeTab === "contacts" ? activeLinkStyle : linkStyle}
+          onClick={() => handleTabClick("contacts")}
         >
-          contacts
+          <span>Contacts</span>
         </Link>
       </li>
       <li className="nav-item">
         <Link
           to="/resume"
-          className={currentPage === "/resume" ? "nav-link active" : "nav-link"}
+          className={`nav-link ${currentPage === "/resume" ? "active" : ""}`}
+          style={activeTab === "resume" ? activeLinkStyle : linkStyle}
+          onClick={() => handleTabClick("resume")}
         >
-          resume
+          <span>Resume</span>
         </Link>
       </li>
     </ul>
