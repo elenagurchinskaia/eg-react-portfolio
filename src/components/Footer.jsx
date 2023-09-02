@@ -1,9 +1,15 @@
 function Footer() {
   return (
-    <footer>
-      <a href="https://www.linkedin.com/in/elena-gurchinskaia/">Linkedin</a>
-      <a href="https://medium.com/@elenagurchinskaia">Medium</a>
-      <a href="https://github.com/elenagurchinskaia/">GitHub</a>
+    <footer className="footer">
+      <a href="https://www.linkedin.com/in/elena-gurchinskaia/">
+        <i className="fab fa-linkedin"></i>
+      </a>
+      <a href="https://medium.com/@elenagurchinskaia">
+        <i className="fab fa-medium"></i>
+      </a>
+      <a href="https://github.com/elenagurchinskaia/">
+        <i className="fab fa-github"></i>
+      </a>
     </footer>
   );
 }
