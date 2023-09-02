@@ -3,3 +3,45 @@
   margin: 0 auto;
   padding-top: 50px;
 }
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s;
+}
+
+.project-overlay a {
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1; /* show the overlay on hover */
+}
+
+/* style for the gitHub icon */
+.project-overlay i {
+  font-size: 2rem;
+}

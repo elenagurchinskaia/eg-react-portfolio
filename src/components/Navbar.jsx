@@ -1,4 +1,4 @@
-// import "../styles/navbar.css";
+import "../styles/Navbar.css";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -23,14 +23,14 @@ function Navbar() {
   return (
     <ul className="nav">
       <li className="nav-item">
-        <Link
+        {/* <Link
           to="/"
           className={`nav-link ${currentPage === "/" ? "active" : ""}`}
           style={activeTab === "home" ? activeLinkStyle : linkStyle}
           onClick={() => handleTabClick("home")}
         >
-          <span>Home</span>
-        </Link>
+          <span>Home</span> */}
+        {/* </Link> */}
       </li>
 
       <li className="nav-item">
