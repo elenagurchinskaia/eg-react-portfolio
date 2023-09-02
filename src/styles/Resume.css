@@ -1,0 +1,37 @@
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 50px;
+}
+
+.resume-section {
+  margin-bottom: 20px;
+}
+
+.resume-section h5 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: grey;
+}
+
+.resume-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-section li {
+  margin-bottom: 5px;
+}
+
+.resume-section a {
+  text-decoration: none;
+  color: grey;
+}
+
+.resume-section a:hover {
+  text-decoration: underline;
+}
