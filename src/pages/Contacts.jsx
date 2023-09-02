@@ -2,6 +2,7 @@ import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import { validateEmail } from "../utils/helper";
 import emailjs from "emailjs-com";
+import "../styles/contactForm.css";
 
 function Contacts() {
   const [input, setInput] = useState({
@@ -90,7 +91,7 @@ function Contacts() {
   return (
     <>
       <h1>Contacts</h1>
-      {/* // ------------------------------- render ---------------------------------- // */}
+
       <ContactForm
         input={input}
         setInput={setInput}

@@ -45,7 +45,7 @@ export default function ContactForm({
           onChange={handleInputChange}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="btn btn-black">
         Submit
       </Button>
     </Form>
