@@ -1,5 +1,5 @@
 import Project from "../components/Project";
-import "../styles/portfolio.css";
+// import "../styles/portfolio.css";
 import projectImg1 from "../assets/images/project-01_.png";
 import projectImg2 from "../assets/images/project-02_.png";
 import projectImg3 from "../assets/images/project-03.jpg";
