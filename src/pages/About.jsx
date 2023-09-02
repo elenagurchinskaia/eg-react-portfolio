@@ -1,5 +1,5 @@
 import aboutImage from "../assets/images/avatar.jpeg";
-import "../styles/about.css";
+// import "../styles/about.css";
 
 function About() {
   return (
