@@ -36,13 +36,13 @@ Developed a single-page portfolio application showcasing a web developer's skill
 
 ## Deployment
 
-[Elena's portfolio](https://main--benevolent-hummingbird-60f64b.netlify.app/about)
+[Elena's portfolio](https://main--benevolent-hummingbird-60f64b.netlify.app/)
 
 ![alt text](./src/assets/images/portfolio.png)
 
 ## GitHub Repo
 
-[eg-react-portfolio](https://github.com/elenagurchinskaia/eg-react-portfolio)
+[eg-react-portfolio](https://github.com/elenagurchinskaia/eg-react-portfolio/)
 
 ## Installation
 

@@ -23,14 +23,14 @@ function Navbar() {
   return (
     <ul className="nav">
       <li className="nav-item">
-        {/* <Link
+        <Link
           to="/"
           className={`nav-link ${currentPage === "/" ? "active" : ""}`}
           style={activeTab === "home" ? activeLinkStyle : linkStyle}
           onClick={() => handleTabClick("home")}
         >
-          <span>Home</span> */}
-        {/* </Link> */}
+          <span>Home</span>
+        </Link>
       </li>
 
       <li className="nav-item">

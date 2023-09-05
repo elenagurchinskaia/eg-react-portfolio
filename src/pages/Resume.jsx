@@ -27,7 +27,7 @@ function Resume() {
       <div className="resume-section">
         <p>
           <a
-            href="https://drive.google.com/file/d/1pZA6_dcJcUrQUh7iSwNJI3CLwZJvaKqF/view"
+            href="https://drive.google.com/file/d/1pZA6_dcJcUrQUh7iSwNJI3CLwZJvaKqF/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
