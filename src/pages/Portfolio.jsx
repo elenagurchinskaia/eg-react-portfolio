@@ -36,13 +36,11 @@ function Portfolio() {
         </div>
         <div className="col-md-4 mb-2">
           <Project
-            name={"Project #03"}
+            name={"SASQUEST"}
             // description={"This is my third project"}
-            image={projectImg3}
-            deployedLink={
-              "https://sheltered-scrubland-47894-17ae2d63c103.herokuapp.com/"
-            }
-            githubLink={"https://github.com/DSHowarth/Escape-Room-Storefront"}
+            image={sasquest}
+            deployedLink={"https://sasquest-52c8b076a68a.herokuapp.com/"}
+            githubLink={"https://github.com/laineycreighton/sasquest"}
           />
         </div>
         <div className="col-md-4 mb-2">
