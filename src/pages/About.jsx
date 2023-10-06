@@ -12,17 +12,16 @@ function About() {
           <div className="col-md-6">
             <h2>About</h2>
             <p>
-              "Hello, I'm Elena, a passionate web developer with a flair for
-              crafting elegant and user-friendly solutions. With a strong
-              foundation in front-end and back-end development, I bring to life
-              dynamic and responsive websites that engage users and deliver
-              seamless experiences. Whether it's turning a design into clean and
-              efficient code or building interactive features, I'm driven by the
-              challenge of creating web applications that leave a lasting
-              impact. My commitment to staying up-to-date with the latest
-              technologies and best practices ensures that I'm always ready to
-              tackle new projects and contribute to innovative solutions. Let's
-              collaborate to build something remarkable together!"
+              Full-stack software developer with a background in design.
+              Recognized for the ability to blend creative aesthetics with
+              technical functionality, resulting in user-centered design
+              solutions. Proficient in React, JavaScript, HTML, and CSS, with a
+              knack for creative problem-solving and effective project
+              management. Driven by a passion for addressing user needs through
+              thoughtful design and harnessing technology to make a positive
+              societal impact. Uniquely positioned to combine web development
+              skills with a design background to bring a fresh perspective to
+              product development for enhanced user satisfaction.
             </p>
           </div>
         </div>
