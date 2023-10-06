@@ -38,7 +38,7 @@ function Portfolio() {
           <Project
             name={"SASQUEST"}
             // description={"This is my third project"}
-            image={sasquest}
+            image={projectImg3}
             deployedLink={"https://sasquest-52c8b076a68a.herokuapp.com/"}
             githubLink={"https://github.com/laineycreighton/sasquest"}
           />
