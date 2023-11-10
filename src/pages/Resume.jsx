@@ -1,47 +1,79 @@
+// ----------- IMPORTS ----------- //
+
+// CSS
+
 import "../styles/Resume.css";
+
+// Images
+
+import javascript from "../assets/images/javascript.png";
+import react from "../assets/images/react.png";
+import html from "../assets/images/html.png";
+import css from "../assets/images/css.png";
+import git from "../assets/images/git.png";
+import graphql from "../assets/images/graphql.png";
+import heroku from "../assets/images/heroku.png";
+import jquery from "../assets/images/jquery.png";
+import jwt from "../assets/images/jwt.png";
+import mongodb from "../assets/images/mongodb.png";
+import mysql from "../assets/images/mysql.png";
+import netlify from "../assets/images/netlify.png";
+import postman from "../assets/images/postman.png";
+import sequelize from "../assets/images/sequelize.png";
+
+// ----------- EXPORTS ----------- //
 
 function Resume() {
   return (
+    // Heading
     <div className="resume-container">
       <h1>SKILLS</h1>
       {/* <h1>Resume</h1> */}
 
       <div className="resume-section">
         <h5>Front-End:</h5>
-        <ul className="list-unstyled">
-          <li>React</li>
-          <li>JavaScript</li>
-          <li>jQuery</li>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
+        <div className="list-unstyled">
+          <div>
+            <img src={react} />
+            <img src={javascript} />
+            <img src={jquery} />
+            <img src={html} />
+            <img src={css} />
+          </div>
+        </div>
       </div>
 
       <div className="resume-section">
         <h5>Back-End:</h5>
-        <ul className="list-unstyled">
-          <li>mySQL</li>
-          <li>Sequelizer</li>
-          <li>MongoDB</li>
-          <li>GraphQL</li>
-        </ul>
+        <div className="list-unstyled">
+          <div>
+            <img src={mysql} />
+            <img src={sequelize} />
+            <img src={mongodb} />
+            <img src={graphql} />
+          </div>
+        </div>
       </div>
 
       <div className="resume-section">
         <h5>Other:</h5>
-        <ul className="list-unstyled">
-          <li>JWT</li>
-          <li>Postman</li>
-        </ul>
+        <div className="list-unstyled">
+          <div>
+            <img src={jwt} />
+            <img src={postman} />
+          </div>
+        </div>
       </div>
 
       <div className="resume-section">
         <h5>Deployment:</h5>
-        <ul className="list-unstyled">
-          <li>Git</li>
-          <li>Heroku</li>
-          <li>Netlify</li>
-        </ul>
+        <div className="list-unstyled">
+          <div>
+            <img src={git} />
+            <img src={heroku} />
+            <img src={netlify} />
+          </div>
+        </div>
       </div>
 
       <div className="resume-section">

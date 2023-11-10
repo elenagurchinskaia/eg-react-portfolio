@@ -1,3 +1,5 @@
+// ----------- IMPORTS ----------- //
+
 import { useState } from "react";
 import ContactForm from "../components/ContactForm";
 import { validateEmail } from "../utils/helper";

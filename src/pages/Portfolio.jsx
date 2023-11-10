@@ -1,8 +1,10 @@
+// ----------- IMPORTS ----------- //
+
 import Project from "../components/Project";
 import "../styles/Portfolio.css";
 import projectImg1 from "../assets/images/project-01_.png";
 import projectImg2 from "../assets/images/project-02_.png";
-import projectImg3 from "../assets/images/project-03.jpg";
+import projectImg3 from "../assets/images/project-03.png";
 import projectImg4 from "../assets/images/project-04.jpg";
 import projectImg5 from "../assets/images/project-05.jpg";
 import projectImg6 from "../assets/images/project-06.jpg";
@@ -45,35 +47,39 @@ function Portfolio() {
         </div>
         <div className="col-md-4 mb-2">
           <Project
-            name={"Project #04"}
+            name={"Weather Dashboard"}
             // description={"This is my fourth project"}
             image={projectImg4}
             deployedLink={
-              "https://sheltered-scrubland-47894-17ae2d63c103.herokuapp.com/"
+              "https://elenagurchinskaia.github.io/weather-dashboard/"
             }
-            githubLink={"https://github.com/DSHowarth/Escape-Room-Storefront"}
+            githubLink={
+              "https://github.com/elenagurchinskaia/weather-dashboard"
+            }
           />
         </div>
         <div className="col-md-4 mb-2">
           <Project
-            name={"Project #05"}
+            name={"Book Search Engine"}
             // description={"This is my fifth project"}
             image={projectImg5}
             deployedLink={
-              "https://sheltered-scrubland-47894-17ae2d63c103.herokuapp.com/"
+              "https://elena-book-search-01a02c50dd0b.herokuapp.com/"
             }
-            githubLink={"https://github.com/DSHowarth/Escape-Room-Storefront"}
+            githubLink={
+              "https://github.com/elenagurchinskaia/book-search-engine"
+            }
           />
         </div>
         <div className="col-md-4 mb-2">
           <Project
-            name={"Project #06"}
+            name={"Note Taker"}
             // description={"This is my sixth project"}
             image={projectImg6}
-            deployedLink={
-              "https://sheltered-scrubland-47894-17ae2d63c103.herokuapp.com/"
+            deployedLink={"https://eg-note-taker-fd686ed98563.herokuapp.com/"}
+            githubLink={
+              "https://github.com/elenagurchinskaia/express-note-taker"
             }
-            githubLink={"https://github.com/DSHowarth/Escape-Room-Storefront"}
           />
         </div>
       </div>

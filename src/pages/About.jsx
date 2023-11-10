@@ -1,3 +1,5 @@
+// ----------- IMPORTS ----------- //
+
 import aboutImage from "../assets/images/avatar.jpeg";
 import "../styles/About.css";
 
@@ -12,16 +14,18 @@ function About() {
           <div className="col-md-6">
             <h2>About</h2>
             <p>
-              Full-stack software developer with a background in design.
+              Full-stack software developer with a strong foundation in design.
               Recognized for the ability to blend creative aesthetics with
               technical functionality, resulting in user-centered design
-              solutions. Proficient in React, JavaScript, HTML, and CSS, with a
-              knack for creative problem-solving and effective project
-              management. Driven by a passion for addressing user needs through
-              thoughtful design and harnessing technology to make a positive
-              societal impact. Uniquely positioned to combine web development
-              skills with a design background to bring a fresh perspective to
-              product development for enhanced user satisfaction.
+              solutions. Skilled in a variety of technologies, including but not
+              limited to web development tools such as React, JavaScript, HTML,
+              CSS, Node, Express. Skilled in creative problem-solving and
+              efficient project management. Fueled by a passionate commitment to
+              addressing user needs through thoughtful design and leveraging
+              technology for positive societal impact. Particularly passionate
+              about the mobile engineering track, aiming to contribute a unique
+              blend of web development proficiency and design acumen to elevate
+              product development and enhance overall user satisfaction.
             </p>
           </div>
         </div>
