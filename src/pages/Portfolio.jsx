@@ -58,7 +58,7 @@ function Portfolio() {
             }
           />
         </div>
-        <div className="col-md-4 mb-2">
+        {/* <div className="col-md-4 mb-2">
           <Project
             name={"Book Search Engine"}
             // description={"This is my fifth project"}
@@ -70,7 +70,7 @@ function Portfolio() {
               "https://github.com/elenagurchinskaia/book-search-engine"
             }
           />
-        </div>
+        </div> */}
         <div className="col-md-4 mb-2">
           <Project
             name={"Note Taker"}
