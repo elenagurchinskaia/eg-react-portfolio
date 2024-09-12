@@ -22,10 +22,7 @@ function About() {
               CSS, Node, Express. Skilled in creative problem-solving and
               efficient project management. Fueled by a passionate commitment to
               addressing user needs through thoughtful design and leveraging
-              technology for positive societal impact. Particularly passionate
-              about the mobile engineering track, aiming to contribute a unique
-              blend of web development proficiency and design acumen to elevate
-              product development and enhance overall user satisfaction.
+              technology for positive societal impact.
             </p>
           </div>
         </div>
