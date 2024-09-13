@@ -79,7 +79,7 @@ function Resume() {
       <div className="resume-section">
         <p>
           <a
-            href="https://drive.google.com/file/d/1BuRUV2XuZXHrBA2UGOC1XJikf3KgjpLD/view?usp=sharing"
+            href="https://drive.google.com/file/d/1fyPdfJE69DEOAYsi5jG-D5H2KPLoPrSP/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
