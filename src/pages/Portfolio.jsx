@@ -8,6 +8,7 @@ import projectImg3 from "../assets/images/project-03.png";
 import projectImg4 from "../assets/images/project-04.jpg";
 import projectImg5 from "../assets/images/project-05.jpg";
 import projectImg6 from "../assets/images/project-06.jpg";
+import projectImg7 from "../assets/images/project-07.png";
 
 function Portfolio() {
   return (
@@ -87,7 +88,7 @@ function Portfolio() {
           <Project
             name={"Mari's Ballon Bar"}
             // description={"This is my sixth project"}
-            image={projectImg6}
+            image={projectImg7}
             deployedLink={"https://maris-ballon-bar.netlify.app/"}
             githubLink={
               "https://github.com/elenagurchinskaia/maris-ballon-bar"
