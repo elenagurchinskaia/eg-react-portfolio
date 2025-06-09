@@ -82,6 +82,18 @@ function Portfolio() {
             }
           />
         </div>
+
+        <div className="col-md-4 mb-2">
+          <Project
+            name={"Mari's Ballon Bar"}
+            // description={"This is my sixth project"}
+            image={projectImg6}
+            deployedLink={"https://maris-ballon-bar.netlify.app/"}
+            githubLink={
+              "https://github.com/elenagurchinskaia/maris-ballon-bar"
+            }
+          />
+        </div>
       </div>
     </div>
   );
