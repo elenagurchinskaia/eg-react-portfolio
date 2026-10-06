@@ -1,14 +1,18 @@
-import Navbar from "./Navbar";
-import "../styles/Header.css";
+import { profile } from "../data/profile";
 
-export default function Header() {
+export default function Header({ sound, onToggleSound }) {
   return (
-    <header className="d-flex justify-content-between">
-      <div className="header">
-        <h1>Elena Gurchinskaia</h1>
-        <h5>Full-Stack Developer</h5>
-      </div>
-      <Navbar />
+    <header className="site-header">
+      <a href="#top" className="brand">
+        {profile.name}
+      </a>
+      <button
+        className="sound-toggle"
+        onClick={onToggleSound}
+        aria-pressed={sound}
+      >
+        Sound: {sound ? "on" : "off"}
+      </button>
     </header>
   );
 }
