@@ -6,6 +6,7 @@ const vertex = /* glsl */ `
   uniform vec2 uMouse;
   uniform float uEnergy;
   uniform float uSize;
+  uniform float uForce;
   attribute vec3 aSeed;
   varying float vMix;
 
@@ -21,8 +22,8 @@ const vertex = /* glsl */ `
     vec2 d = p.xy - uMouse * vec2(6.0, 3.6);
     float dist = length(d);
     float push = smoothstep(2.6, 0.0, dist);
-    p.xy += normalize(d + 0.0001) * push * 0.9;
-    p.z += push * 0.8;
+    p.xy += normalize(d + 0.0001) * push * 0.9 * uForce;
+    p.z += push * 0.8 * uForce;
 
     vMix = clamp(push + aSeed.z * 0.5 + uEnergy * 0.3, 0.0, 1.0);
     vec4 mv = modelViewMatrix * vec4(p, 1.0);
@@ -45,13 +46,41 @@ const fragment = /* glsl */ `
   }
 `;
 
-export default function Scene({ energy = 0 }) {
+export default function Scene({
+  energy = 0,
+  theme = "dark",
+  params = { speed: 1, force: 1, size: 4 },
+}) {
   const mountRef = useRef(null);
   const energyRef = useRef(energy);
+  const paramsRef = useRef(params);
+  const sceneRef = useRef(null);
 
   useEffect(() => {
     energyRef.current = energy;
   }, [energy]);
+
+  useEffect(() => {
+    paramsRef.current = params;
+    const s = sceneRef.current;
+    if (s) {
+      s.uniforms.uForce.value = params.force;
+      s.uniforms.uSize.value = params.size * (window.innerWidth < 700 ? 1.25 : 1);
+    }
+  }, [params]);
+
+  // recolor from the active theme's CSS variables
+  useEffect(() => {
+    const s = sceneRef.current;
+    if (!s) return;
+    const css = getComputedStyle(document.documentElement);
+    s.uniforms.uColorA.value.set(css.getPropertyValue("--particle").trim());
+    s.uniforms.uColorB.value.set(css.getPropertyValue("--accent").trim());
+    // additive glow vanishes on light backgrounds
+    s.material.blending =
+      theme === "light" ? THREE.NormalBlending : THREE.AdditiveBlending;
+    s.material.needsUpdate = true;
+  }, [theme]);
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -95,7 +124,8 @@ export default function Scene({ energy = 0 }) {
       uTime: { value: 0 },
       uMouse: { value: new THREE.Vector2(10, 10) },
       uEnergy: { value: 0 },
-      uSize: { value: small ? 5 : 4 },
+      uSize: { value: paramsRef.current.size * (small ? 1.25 : 1) },
+      uForce: { value: paramsRef.current.force },
       uColorA: { value: new THREE.Color("#5b5b73") },
       uColorB: { value: new THREE.Color("#c6ff3d") },
     };
@@ -108,6 +138,16 @@ export default function Scene({ energy = 0 }) {
       blending: THREE.AdditiveBlending,
     });
     scene.add(new THREE.Points(geometry, material));
+    sceneRef.current = { uniforms, material };
+    {
+      const css = getComputedStyle(document.documentElement);
+      uniforms.uColorA.value.set(css.getPropertyValue("--particle").trim());
+      uniforms.uColorB.value.set(css.getPropertyValue("--accent").trim());
+      material.blending =
+        document.documentElement.dataset.theme === "light"
+          ? THREE.NormalBlending
+          : THREE.AdditiveBlending;
+    }
 
     const target = new THREE.Vector2(10, 10);
     const onMove = (e) => {
@@ -132,7 +172,8 @@ export default function Scene({ energy = 0 }) {
     const tick = () => {
       if (!running) return;
       raf = requestAnimationFrame(tick);
-      uniforms.uTime.value += clock.getDelta() * (reduced ? 0.15 : 1);
+      uniforms.uTime.value +=
+        clock.getDelta() * (reduced ? 0.15 : paramsRef.current.speed);
       uniforms.uMouse.value.lerp(reduced ? new THREE.Vector2(10, 10) : target, 0.06);
       uniforms.uEnergy.value +=
         (energyRef.current - uniforms.uEnergy.value) * 0.04;
@@ -166,6 +207,7 @@ export default function Scene({ energy = 0 }) {
       material.dispose();
       renderer.dispose();
       renderer.domElement.remove();
+      sceneRef.current = null;
     };
   }, []);
 

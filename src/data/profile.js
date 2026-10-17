@@ -8,8 +8,9 @@ export const profile = {
     "Skilled in creative problem-solving and efficient project management, and driven by a commitment to addressing real user needs through thoughtful design, using technology for positive societal impact.",
   resume:
     "https://drive.google.com/file/d/1oo4h3K5DGPqM0HzeT-Wy4chrBQPInBca/view?usp=sharing",
-  // TODO: replace with the address you want recruiters to use
-  email: "hornandhoovesdev@gmail.com",
+  email: "elenagurchinskaia@gmail.com",
+  keyStack: ["React", "JavaScript", "Node", "Express", "MongoDB", "MySQL", "GraphQL"],
+  availability: "Open to full-stack developer roles",
   links: [
     {
       label: "GitHub",

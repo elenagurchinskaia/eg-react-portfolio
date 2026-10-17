@@ -8,6 +8,18 @@ export default function Contact() {
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState({ type: "idle", text: "" });
 
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${profile.email}`;
+    }
+  };
+
   const onChange = (e) =>
     setValues((v) => ({ ...v, [e.target.name]: e.target.value }));
 
@@ -43,10 +55,45 @@ export default function Contact() {
   return (
     <section className="section" id="contact">
       <h2 className="section-title">Let&apos;s talk</h2>
-      <p className="lede">
-        Open to new opportunities. Email{" "}
-        <a href={`mailto:${profile.email}`}>{profile.email}</a> or use the form.
+      <p className="availability">
+        <span className="availability-dot" aria-hidden="true"></span>
+        {profile.availability}
       </p>
+      <p className="lede">
+        The fastest way to reach me is email. You&apos;ll also find my resume and
+        profiles below.
+      </p>
+      <div className="contact-actions">
+        <a
+          className="btn"
+          href={`mailto:${profile.email}?subject=${encodeURIComponent(
+            "Opportunity for Elena"
+          )}`}
+        >
+          Email me
+        </a>
+        <button className="btn btn-ghost" type="button" onClick={copyEmail}>
+          {copied ? "Copied!" : profile.email}
+        </button>
+        <a
+          className="btn btn-ghost"
+          href={profile.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume ↗
+        </a>
+      </div>
+      <ul className="contact-links">
+        {profile.links.map((l) => (
+          <li key={l.label}>
+            <a href={l.href} target="_blank" rel="noopener noreferrer">
+              <i className={`fab ${l.icon}`} aria-hidden="true"></i> {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <h3 className="form-title">Or send a message</h3>
       <form className="contact-form" onSubmit={onSubmit} noValidate>
         <label>
           Name

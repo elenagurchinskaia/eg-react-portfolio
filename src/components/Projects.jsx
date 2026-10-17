@@ -8,7 +8,7 @@ function ProjectCard({ project, index }) {
     <article className="project reveal" ref={ref}>
       <a
         className="project-media"
-        href={project.live}
+        href={project.live || project.code}
         target="_blank"
         rel="noopener noreferrer"
         tabIndex={-1}
@@ -19,6 +19,7 @@ function ProjectCard({ project, index }) {
       <div className="project-body">
         <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
         <h3>{project.name}</h3>
+        {project.status && <p className="project-status">{project.status}</p>}
         <p>{project.summary}</p>
         <ul className="tags">
           {project.tags.map((t) => (
@@ -26,9 +27,11 @@ function ProjectCard({ project, index }) {
           ))}
         </ul>
         <div className="project-links">
-          <a href={project.live} target="_blank" rel="noopener noreferrer">
-            Live site <span aria-hidden="true">↗</span>
-          </a>
+          {project.live && (
+            <a href={project.live} target="_blank" rel="noopener noreferrer">
+              Live site <span aria-hidden="true">↗</span>
+            </a>
+          )}
           <a href={project.code} target="_blank" rel="noopener noreferrer">
             Source <span aria-hidden="true">↗</span>
           </a>

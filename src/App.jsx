@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import Scene from "./components/Scene";
-import Entry from "./components/Entry";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Panel from "./components/Panel";
@@ -9,6 +8,8 @@ import Skills from "./components/Skills";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import useTheme from "./hooks/useTheme";
+import useSceneParams from "./hooks/useSceneParams";
 import * as sound from "./utils/sound";
 
 const sections = [
@@ -24,10 +25,10 @@ const fromHash = () => {
 };
 
 function App() {
-  // A deep link (e.g. /#work) skips the intro so shared links land on content.
-  const [entered, setEntered] = useState(() => fromHash() !== null);
   const [soundOn, setSoundOn] = useState(false);
   const [active, setActive] = useState(fromHash);
+  const [theme, setTheme] = useTheme();
+  const [params, setParams] = useSceneParams();
 
   const open = useCallback((id) => {
     sound.sfx.open();
@@ -47,15 +48,6 @@ function App() {
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
-  const enter = (withSound) => {
-    if (withSound) {
-      sound.enable();
-      sound.sfx.open();
-    }
-    setSoundOn(withSound);
-    setEntered(true);
-  };
-
   const toggleSound = () => {
     if (soundOn) sound.disable();
     else sound.enable();
@@ -69,22 +61,28 @@ function App() {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <Scene energy={current ? 1 : entered ? 0.2 : 0} />
-      {!entered ? (
-        <Entry onEnter={enter} />
-      ) : (
-        <>
-          <Header sound={soundOn} onToggleSound={toggleSound} />
-          <main id="main" aria-hidden={current ? "true" : undefined}>
-            <Hero sections={sections} onOpen={open} />
-          </main>
-          <Footer />
-          {current && (
-            <Panel title={current.label} onClose={close}>
-              <current.Component />
-            </Panel>
-          )}
-        </>
+      <Scene
+        energy={current ? 1 : 0.2}
+        theme={theme}
+        params={params}
+      />
+      <Header
+        sound={soundOn}
+        onToggleSound={toggleSound}
+        theme={theme}
+        onTheme={setTheme}
+        params={params}
+        onParams={setParams}
+        solid={Boolean(current)}
+      />
+      <main id="main" aria-hidden={current ? "true" : undefined}>
+        <Hero sections={sections} onOpen={open} />
+      </main>
+      <Footer />
+      {current && (
+        <Panel title={current.label} onClose={close}>
+          <current.Component />
+        </Panel>
       )}
     </>
   );
