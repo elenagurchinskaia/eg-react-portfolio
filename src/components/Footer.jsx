@@ -1,18 +1,25 @@
-import "../styles/Footer.css";
+import { profile } from "../data/profile";
 
-function Footer() {
+export default function Footer() {
   return (
-    <footer className="footer">
-      <a href="https://www.linkedin.com/in/elena-gurchinskaia/">
-        <i className="fab fa-linkedin"></i>
-      </a>
-      <a href="https://medium.com/@elenagurchinskaia">
-        <i className="fab fa-medium"></i>
-      </a>
-      <a href="https://github.com/elenagurchinskaia/">
-        <i className="fab fa-github"></i>
-      </a>
+    <footer className="site-footer">
+      <p>
+        © {new Date().getFullYear()} {profile.name}
+      </p>
+      <ul>
+        {profile.links.map((l) => (
+          <li key={l.label}>
+            <a
+              href={l.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={l.label}
+            >
+              <i className={`fab ${l.icon}`} aria-hidden="true"></i>
+            </a>
+          </li>
+        ))}
+      </ul>
     </footer>
   );
 }
-export default Footer;
