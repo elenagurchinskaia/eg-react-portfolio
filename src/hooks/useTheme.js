@@ -3,7 +3,6 @@ import { useState } from "react";
 export const themes = [
   { id: "dark", label: "Dark" },
   { id: "light", label: "Light" },
-  { id: "signal", label: "Signal" },
 ];
 
 const KEY = "theme";

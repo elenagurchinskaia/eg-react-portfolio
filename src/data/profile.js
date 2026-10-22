@@ -27,11 +27,6 @@ export const profile = {
       href: "https://www.linkedin.com/in/elena-gurchinskaia/",
       icon: "fa-linkedin",
     },
-    {
-      label: "Medium",
-      href: "https://medium.com/@elenagurchinskaia",
-      icon: "fa-medium",
-    },
   ],
 };
 

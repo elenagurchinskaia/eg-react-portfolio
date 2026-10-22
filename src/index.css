@@ -32,20 +32,6 @@ html[data-theme="light"] {
   --particle: #8e8aa3;
 }
 
-html[data-theme="signal"] {
-  --bg: #07070d;
-  --surface: #11111c;
-  --line: #2b2b44;
-  --text: #f6f6ff;
-  --muted: #a3a3c2;
-  --accent: #ff3d81;
-  --accent-2: #36e2ff;
-  --on-accent: #07070d;
-  --glow: #1a1030;
-  --panel-bg: rgba(7, 7, 13, 0.96);
-  --particle: #4a4a85;
-}
-
 *,
 *::before,
 *::after {
@@ -623,25 +609,32 @@ main,
   gap: 10px;
   position: relative;
 }
-.theme-switch {
-  display: flex;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 2px;
-  background: var(--bg);
-}
-.theme-switch button {
-  font: 500 0.8rem var(--mono);
-  color: var(--muted);
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--text);
   background: transparent;
-  border: 0;
-  border-radius: 999px;
-  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  padding: 0;
   cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, transform 0.3s;
 }
-.theme-switch button[aria-checked="true"] {
-  background: var(--accent);
-  color: var(--on-accent);
+.icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(20deg);
+}
+.icon-btn[aria-pressed="true"],
+.icon-btn[aria-expanded="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
 }
 .tune-panel {
   position: absolute;
