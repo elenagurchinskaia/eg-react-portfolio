@@ -1,7 +1,8 @@
 import { profile } from "../data/profile";
-import avatar from "../assets/images/avatar.jpeg";
+import MusicCard from "./MusicCard";
+import avatar from "../assets/images/avatar-2026.jpg";
 
-export default function About() {
+export default function About({ onMusic }) {
   return (
     <section className="section" id="about">
       <h2 className="section-title">About</h2>
@@ -10,6 +11,7 @@ export default function About() {
         <div>
           <p>{profile.intro}</p>
           <p>{profile.about}</p>
+          <MusicCard onPlay={onMusic} />
         </div>
       </div>
     </section>

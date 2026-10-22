@@ -784,3 +784,34 @@ main,
   color: var(--accent);
   margin: 0 0 10px;
 }
+
+/* ---------- music card ---------- */
+.music-card {
+  margin-top: 28px;
+  padding: 18px;
+  max-width: 480px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.music-label {
+  font: 500 0.8rem var(--mono) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin: 0 0 12px !important;
+}
+.music-closed {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+}
+.music-closed a {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.music-card iframe {
+  border-radius: 12px;
+  display: block;
+}
