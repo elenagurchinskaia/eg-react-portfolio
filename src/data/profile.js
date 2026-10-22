@@ -1,6 +1,6 @@
 export const profile = {
   name: "Elena Gurchinskaia",
-  role: "Full-Stack Developer",
+  role: "Full-Stack Software Engineer",
   headline: "I build and design full-stack apps people love to use.",
   intro:
     "Full-stack developer with a strong foundation in design. I blend creative aesthetics with technical function to ship user-centered products with React, Node and Express.",

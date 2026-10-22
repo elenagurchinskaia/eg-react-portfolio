@@ -13,6 +13,7 @@ function ProjectCard({ project }) {
         rel="noopener noreferrer"
         tabIndex={-1}
         aria-hidden="true"
+        style={project.aspect ? { aspectRatio: project.aspect } : undefined}
       >
         <DistortImage src={project.image} />
       </a>

@@ -15,9 +15,9 @@ export const projects = [
     name: "Mari's Balloon Bar",
     summary: "A small-business site built with React and Vite.",
     image: balloonBar,
-    aspect: "2838 / 1324",
+    aspect: "2494 / 1330",
     tags: ["React", "Vite"],
-    live: "https://maris-ballon-bar.netlify.app/",
+    live: "https://marisballoonbar.com/",
     code: "https://github.com/elenagurchinskaia/maris-ballon-bar",
   },
 ];

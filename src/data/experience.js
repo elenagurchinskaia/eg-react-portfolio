@@ -1,12 +1,37 @@
-// Add roles here; the Experience section (and its nav link) appears
-// automatically once this list has at least one entry.
-//
-// {
-//   dates: "2023 — Present",
-//   title: "Full-Stack Developer",
-//   company: "Company name",
-//   url: "https://example.com",       // optional
-//   summary: "What you built and the impact it had.",
-//   tags: ["React", "Node"],
-// },
-export const experience = [];
+// The Experience section (and its nav link) appears when this list has entries.
+// Optional fields: `url` links the company name; `clients` lists client work
+// shown under the role.
+export const experience = [
+  {
+    dates: "2026 — Present",
+    title: "Co-Founder & Full-Stack Software Engineer",
+    company: "Kinlo",
+    summary:
+      "Building a mobile-first community and event platform end to end: event creation, ticket sales, memberships, attendee management and messaging. Integrated the Anthropic Claude API for AI-powered event discovery, content generation and host analytics, backed by a secure server-side architecture with usage limits, cost controls and prompt-injection safeguards.",
+    tags: ["React Native", "Expo", "Node.js", "Firebase", "Stripe", "Claude API"],
+  },
+  {
+    dates: "2022 — Present",
+    title: "Founder & Full-Stack Software Engineer",
+    company: "Horn & Hooves",
+    summary:
+      "Independent studio building responsive full-stack web applications for small-business clients. Own each project from requirements and technical design through deployment and post-launch support, including design systems, contact workflows and third-party integrations.",
+    clients: [
+      {
+        name: "The Dating Doc",
+        dates: "Dec 2023 — Oct 2025 · Contract",
+        summary:
+          "Led full-stack development and product design of a dating and events platform. Built multi-step onboarding, event registration with Stripe checkout and webhooks, and real-time messaging, and designed the UI, visual identity and design system.",
+      },
+    ],
+    tags: ["React", "Node.js", "GraphQL", "MongoDB", "Socket.IO", "Stripe", "REST APIs"],
+  },
+  {
+    dates: "2020 — 2023",
+    title: "3D Renderer / Visualization Artist",
+    company: "WGI",
+    summary:
+      "Created photorealistic renderings, animations and VR experiences for architectural projects, and set graphic production standards for the division that cut production time by 80%.",
+    tags: ["3D Visualization", "Animation", "VR"],
+  },
+];

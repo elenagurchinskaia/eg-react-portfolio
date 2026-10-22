@@ -1,15 +1,15 @@
 /* ---------- tokens ---------- */
 :root {
   color-scheme: dark;
-  --bg: #0c0c10;
-  --surface: #14141b;
-  --line: #262633;
+  --bg: #1b1b20;
+  --surface: #24242a;
+  --line: #36363e;
   --text: #ecebe6;
   --muted: #9a99a8;
   --accent: #c6ff3d;
   --accent-2: #ff5c35;
   --on-accent: #0c0c10;
-  --glow: #171722;
+  --glow: #26262d;
   --particle: #5b5b73;
   --radius: 12px;
   --body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -426,7 +426,7 @@ main {
 }
 .job {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 124px 1fr;
   gap: 8px 20px;
 }
 .job-dates {
@@ -441,16 +441,48 @@ main {
   font-weight: 600;
   line-height: 1.35;
 }
-.job h3 a {
+.job .company {
+  color: var(--accent);
   text-decoration: none;
 }
-.job h3 a:hover {
-  color: var(--accent);
+.job a.company:hover {
+  text-decoration: underline;
 }
 .job p:not(.job-dates) {
   color: var(--muted);
   font-size: 0.95rem;
   margin: 8px 0 12px;
+}
+
+.job p.clients-label {
+  font: 600 0.7rem var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin: 4px 0 10px;
+}
+.job-clients {
+  margin: 0 0 14px;
+  display: grid;
+  gap: 14px;
+}
+.job-clients li {
+  padding-left: 14px;
+  border-left: 2px solid var(--line);
+}
+.job .job-clients p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+.job .job-clients .client-name {
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.job .job-clients .client-name span {
+  color: var(--muted);
+  font: 400 0.72rem var(--mono);
+  margin-left: 8px;
 }
 
 /* ---------- projects ---------- */
