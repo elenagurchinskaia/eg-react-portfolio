@@ -55,10 +55,6 @@ export default function Contact() {
   return (
     <section className="section" id="contact">
       <h2 className="section-title">Let&apos;s talk</h2>
-      <p className="availability">
-        <span className="availability-dot" aria-hidden="true"></span>
-        {profile.availability}
-      </p>
       <p className="lede">
         The fastest way to reach me is email. You&apos;ll also find my resume and
         profiles below.

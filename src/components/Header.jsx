@@ -42,74 +42,122 @@ const controls = [
 ];
 
 export default function Header({
+  sections,
+  active,
   sound,
   onToggleSound,
   theme,
   onTheme,
   params,
   onParams,
-  solid,
 }) {
   const [tuning, setTuning] = useState(false);
+  const current = active ?? sections[0]?.id;
 
   return (
-    <header className={`site-header${solid ? " is-solid" : ""}`}>
-      <a href="#top" className="brand">
-        {profile.name}
-      </a>
-      <div className="controls">
-        <button
-          className="icon-btn"
-          onClick={() => onTheme(theme === "dark" ? "light" : "dark")}
-          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-          title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-        >
-          {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-        </button>
-        <button
-          className="icon-btn"
-          onClick={() => setTuning((v) => !v)}
-          aria-expanded={tuning}
-          aria-controls="tune-panel"
-          aria-label="Tune the background"
-          title="Tune the background"
-        >
-          <SlidersIcon />
-        </button>
-        <button
-          className="icon-btn"
-          onClick={onToggleSound}
-          aria-pressed={sound}
-          aria-label="Sound"
-          title={sound ? "Turn sound off" : "Turn sound on"}
-        >
-          {sound ? <SoundOnIcon /> : <SoundOffIcon />}
-        </button>
-        {tuning && (
-          <div className="tune-panel" id="tune-panel">
-            {controls.map((c) => (
-              <label key={c.key}>
-                {c.label} · {params[c.key]}
-                <input
-                  type="range"
-                  min={c.min}
-                  max={c.max}
-                  step={c.step}
-                  value={params[c.key]}
-                  onChange={(e) =>
-                    onParams({ ...params, [c.key]: Number(e.target.value) })
-                  }
-                />
-              </label>
+    <header className="sidebar">
+    <div className="controls">
+      <button
+        className="icon-btn"
+        onClick={() => onTheme(theme === "dark" ? "light" : "dark")}
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+        title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+      >
+        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      </button>
+      <button
+        className="icon-btn"
+        onClick={() => setTuning((v) => !v)}
+        aria-expanded={tuning}
+        aria-controls="tune-panel"
+        aria-label="Tune the background"
+        title="Tune the background"
+      >
+        <SlidersIcon />
+      </button>
+      <button
+        className="icon-btn"
+        onClick={onToggleSound}
+        aria-pressed={sound}
+        aria-label="Sound"
+        title={sound ? "Turn sound off" : "Turn sound on"}
+      >
+        {sound ? <SoundOnIcon /> : <SoundOffIcon />}
+      </button>
+      {tuning && (
+        <div className="tune-panel" id="tune-panel">
+          {controls.map((c) => (
+            <label key={c.key}>
+              {c.label} · {params[c.key]}
+              <input
+                type="range"
+                min={c.min}
+                max={c.max}
+                step={c.step}
+                value={params[c.key]}
+                onChange={(e) =>
+                  onParams({ ...params, [c.key]: Number(e.target.value) })
+                }
+              />
+            </label>
+          ))}
+          <button
+            className="tune-reset"
+            onClick={() => onParams({ ...defaultParams })}
+          >
+            Reset
+          </button>
+        </div>
+      )}
+    </div>
+      <div>
+        <h1 className="name">{profile.name}</h1>
+        <p className="role">{profile.role}</p>
+        <p className="tagline">{profile.headline}</p>
+
+        <nav aria-label="Sections" className="side-nav">
+          <ul>
+            {sections.map((sec) => (
+              <li key={sec.id}>
+                <a
+                  href={`#${sec.id}`}
+                  className={current === sec.id ? "is-active" : undefined}
+                  aria-current={current === sec.id ? "true" : undefined}
+                >
+                  <span className="bar" aria-hidden="true"></span>
+                  {sec.label}
+                </a>
+              </li>
             ))}
-            <button
-              className="tune-reset"
-              onClick={() => onParams({ ...defaultParams })}
-            >
-              Reset
-            </button>
-          </div>
-        )}
+          </ul>
+        </nav>
+
+        <a
+          className="btn btn-ghost btn-small"
+          href={profile.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume ↗
+        </a>
+      </div>
+
+      <div className="sidebar-bottom">
+        <ul className="socials">
+          {profile.links.map((l) => (
+            <li key={l.label}>
+              <a
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={l.label}
+                title={l.label}
+              >
+                <i className={`fab ${l.icon}`} aria-hidden="true"></i>
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   );

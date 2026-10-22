@@ -35,6 +35,7 @@ const vertex = /* glsl */ `
 const fragment = /* glsl */ `
   uniform vec3 uColorA;
   uniform vec3 uColorB;
+  uniform float uOpacity;
   varying float vMix;
 
   void main() {
@@ -42,7 +43,7 @@ const fragment = /* glsl */ `
     float r = length(c);
     if (r > 0.5) discard;
     float alpha = smoothstep(0.5, 0.0, r);
-    gl_FragColor = vec4(mix(uColorA, uColorB, vMix), alpha * 0.85);
+    gl_FragColor = vec4(mix(uColorA, uColorB, vMix), alpha * uOpacity);
   }
 `;
 
@@ -105,7 +106,7 @@ export default function Scene({
     );
     camera.position.z = 6;
 
-    const count = small ? 2500 : 7000;
+    const count = small ? 1500 : 4000;
     const positions = new Float32Array(count * 3);
     const seeds = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -125,6 +126,7 @@ export default function Scene({
       uMouse: { value: new THREE.Vector2(10, 10) },
       uEnergy: { value: 0 },
       uSize: { value: paramsRef.current.size * (small ? 1.25 : 1) },
+      uOpacity: { value: 0.4 },
       uForce: { value: paramsRef.current.force },
       uColorA: { value: new THREE.Color("#5b5b73") },
       uColorB: { value: new THREE.Color("#c6ff3d") },
