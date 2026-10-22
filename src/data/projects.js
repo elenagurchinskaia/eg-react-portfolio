@@ -1,5 +1,5 @@
-import kinlo from "../assets/images/kinlo-banner-image.png";
-import balloonBar from "../assets/images/maris-balloon-bar.png";
+import kinlo from "../assets/images/kinlo-banner-image.webp";
+import balloonBar from "../assets/images/maris-balloon-bar.webp";
 
 export const projects = [
   {

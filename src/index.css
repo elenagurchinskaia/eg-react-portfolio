@@ -501,8 +501,10 @@ main {
   border-radius: var(--radius);
   transition: background 0.25s, border-color 0.25s, opacity 0.25s;
 }
-.projects:hover .project:not(:hover) {
-  opacity: 0.55;
+@media (hover: hover) {
+  .projects:hover .project:not(:hover) {
+    opacity: 0.55;
+  }
 }
 .project:hover {
   background: var(--surface);
@@ -618,13 +620,66 @@ main {
 }
 
 /* ---------- small screens ---------- */
+@media (max-width: 1023px) {
+  .sidebar .btn-small {
+    margin-top: 20px;
+  }
+  /* compact inline section nav (the animated bars are desktop-only) */
+  .side-nav {
+    display: block;
+    margin: 28px 0 0;
+  }
+  .side-nav ul {
+    display: flex;
+    gap: 6px 22px;
+    flex-wrap: wrap;
+  }
+  .side-nav .bar {
+    display: none;
+  }
+  .side-nav a {
+    padding: 10px 0;
+  }
+  .side-nav a.is-active {
+    color: var(--accent);
+  }
+  .sidebar-bottom {
+    margin-top: 24px;
+  }
+}
+
+/* bigger tap targets on touchscreens */
+@media (pointer: coarse) {
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+  }
+  .icon-btn svg {
+    width: 19px;
+    height: 19px;
+  }
+  .socials a {
+    padding: 6px;
+    margin: -6px;
+  }
+  .project-links a,
+  .music-closed a {
+    padding: 8px 0;
+  }
+}
+
 @media (max-width: 640px) {
-  .project {
-    grid-template-columns: 1fr;
+  .layout {
+    padding: 0 20px;
   }
-  .about {
-    grid-template-columns: 1fr;
+  .sidebar {
+    padding-top: 92px;
   }
+  .controls {
+    right: 16px;
+  }
+  .project,
+  .about,
   .job {
     grid-template-columns: 1fr;
   }
@@ -633,5 +688,21 @@ main {
   }
   .project {
     padding: 12px 8px;
+  }
+  .section {
+    margin-bottom: 72px;
+  }
+  .job {
+    gap: 4px;
+  }
+  .job p.clients-label {
+    margin-top: 16px;
+  }
+  .job .job-clients .client-name span {
+    display: block;
+    margin: 2px 0 0;
+  }
+  .tune-panel {
+    width: min(240px, calc(100vw - 32px));
   }
 }

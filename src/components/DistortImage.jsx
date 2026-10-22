@@ -47,6 +47,8 @@ export default function DistortImage({ src }) {
   useEffect(() => {
     const wrap = wrapRef.current;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Touch devices have no hover, so keep the plain <img> and skip WebGL.
+    if (window.matchMedia("(hover: none)").matches) return;
 
     let renderer;
     try {
