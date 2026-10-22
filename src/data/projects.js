@@ -1,5 +1,5 @@
 import kinlo from "../assets/images/kinlo-banner-image.png";
-import balloonBar from "../assets/images/project-07.png";
+import balloonBar from "../assets/images/maris-balloon-bar.png";
 
 export const projects = [
   {
@@ -15,6 +15,7 @@ export const projects = [
     name: "Mari's Balloon Bar",
     summary: "A small-business site built with React and Vite.",
     image: balloonBar,
+    aspect: "2838 / 1324",
     tags: ["React", "Vite"],
     live: "https://maris-ballon-bar.netlify.app/",
     code: "https://github.com/elenagurchinskaia/maris-ballon-bar",

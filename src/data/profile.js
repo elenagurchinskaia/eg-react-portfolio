@@ -1,7 +1,7 @@
 export const profile = {
   name: "Elena Gurchinskaia",
   role: "Full-Stack Developer",
-  headline: "I build web apps people actually enjoy using.",
+  headline: "I build and design full-stack apps people love to use.",
   intro:
     "Full-stack developer with a strong foundation in design. I blend creative aesthetics with technical function to ship user-centered products with React, Node and Express.",
   about:
@@ -10,6 +10,11 @@ export const profile = {
     "https://drive.google.com/file/d/1oo4h3K5DGPqM0HzeT-Wy4chrBQPInBca/view?usp=sharing",
   email: "elenagurchinskaia@gmail.com",
   keyStack: ["React", "JavaScript", "Node", "Express", "MongoDB", "MySQL", "GraphQL"],
+  music: {
+    title: "Healing Frequencies",
+    embed: "https://open.spotify.com/embed/album/71a6eE54atrYTJVVu6Ay5b",
+    link: "https://open.spotify.com/album/71a6eE54atrYTJVVu6Ay5b",
+  },
   availability: "Open to full-stack developer roles",
   links: [
     {

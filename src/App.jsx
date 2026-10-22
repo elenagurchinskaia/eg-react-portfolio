@@ -54,6 +54,12 @@ function App() {
     setSoundOn(!soundOn);
   };
 
+  // Spotify and the site's ambient sound shouldn't play over each other.
+  const stopSiteSound = () => {
+    sound.disable();
+    setSoundOn(false);
+  };
+
   const current = sections.find((s) => s.id === active);
 
   return (
@@ -81,7 +87,7 @@ function App() {
       <Footer />
       {current && (
         <Panel title={current.label} onClose={close}>
-          <current.Component />
+          <current.Component onMusic={stopSiteSound} />
         </Panel>
       )}
     </>
