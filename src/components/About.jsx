@@ -9,8 +9,11 @@ export default function About({ onMusic }) {
       <div className="about">
         <img src={avatar} alt={`Portrait of ${profile.name}`} loading="lazy" />
         <div>
-          <p>{profile.intro}</p>
-          <p>{profile.about}</p>
+          <div className="bio">
+            {profile.bio.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </div>
           <MusicCard onPlay={onMusic} />
         </div>
       </div>

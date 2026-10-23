@@ -205,22 +205,30 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   text-decoration: none;
-  transition: color 0.2s;
+  transform-origin: left center;
+  transition: color 0.2s, transform 0.3s;
 }
+/* marker: an empty ring that fills with a lime glow when the section is active */
 .side-nav .bar {
-  width: 28px;
-  height: 1px;
-  background: var(--muted);
-  transition: width 0.25s, background 0.25s;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  background: transparent;
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
-.side-nav a:hover,
+.side-nav a:hover {
+  color: var(--text);
+  transform: translateX(4px) rotate(-3deg);
+}
 .side-nav a.is-active {
   color: var(--text);
 }
-.side-nav a:hover .bar,
 .side-nav a.is-active .bar {
-  width: 60px;
   background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 25%, transparent);
+  transform: scale(1.1);
 }
 @media (min-width: 1024px) {
   .side-nav {
@@ -386,7 +394,7 @@ main {
   color: var(--muted);
   margin-bottom: 14px;
 }
-.about p:first-child {
+.about .bio p:nth-child(-n + 2) {
   color: var(--text);
 }
 
@@ -504,16 +512,18 @@ main {
   padding: 16px;
   border: 1px solid transparent;
   border-radius: var(--radius);
-  transition: background 0.25s, border-color 0.25s, opacity 0.25s;
-}
-@media (hover: hover) {
-  .projects:hover .project:not(:hover) {
-    opacity: 0.55;
-  }
+  transition: background 0.25s, border-color 0.25s, transform 0.3s, box-shadow 0.3s;
 }
 .project:hover {
   background: var(--surface);
   border-color: var(--line);
+}
+@media (hover: hover) {
+  .project:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 32px -16px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
 }
 .project-media {
   display: block;
@@ -616,7 +626,9 @@ main {
   }
   .btn:hover,
   .icon-btn:hover,
-  .socials a:hover {
+  .socials a:hover,
+  .side-nav a:hover,
+  .project:hover {
     transform: none;
   }
   .about img {

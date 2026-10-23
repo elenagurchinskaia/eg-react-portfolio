@@ -2,10 +2,13 @@ export const profile = {
   name: "Elena Gurchinskaia",
   role: "Full-Stack Software Engineer",
   headline: "I design and build web and mobile products.",
-  intro:
-    "Full-stack software engineer with 4+ years building web and mobile products with React, React Native and Node.js. I've shipped payments, event ticketing and real-time messaging.",
-  about:
-    "I came to software engineering from design, so I take a product from interface to data model to backend.",
+  // About section, one paragraph per entry
+  bio: [
+    "Hi, I'm Elena. I started in design and ended up in code, and I've loved working in between ever since.",
+    "I'm a full-stack software engineer, and since 2023 I've been building web and mobile products with React, React Native and Node.js. I notice the details that make a product feel right, from spacing and typography to clean data models, because I enjoy working where a great user experience meets solid engineering.",
+    "Right now I'm co-founding Kinlo, a community and events app, and running Horn & Hooves, my studio building websites and apps for small businesses.",
+    "Away from the keyboard, you'll find me out in nature, traveling, or on the dance floor, dancing salsa and bachata.",
+  ],
   resume:
     "https://drive.google.com/file/d/1oo4h3K5DGPqM0HzeT-Wy4chrBQPInBca/view?usp=sharing",
   email: "elenagurchinskaia@gmail.com",
