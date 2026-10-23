@@ -10,7 +10,7 @@ export const profile = {
     "Away from the keyboard, you'll find me out in nature, traveling, or on the dance floor, dancing salsa and bachata.",
   ],
   resume:
-    "https://drive.google.com/file/d/1oo4h3K5DGPqM0HzeT-Wy4chrBQPInBca/view?usp=sharing",
+    "https://drive.google.com/file/d/1El1fzfhYT7T4HarPhZE-kRsMQRWMG_ym/view?usp=sharing",
   email: "elenagurchinskaia@gmail.com",
   keyStack: ["React", "JavaScript", "Node", "Express", "MongoDB", "MySQL", "GraphQL"],
   music: {

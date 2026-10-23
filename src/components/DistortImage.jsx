@@ -47,8 +47,9 @@ export default function DistortImage({ src }) {
   useEffect(() => {
     const wrap = wrapRef.current;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    // Touch devices have no hover, so keep the plain <img> and skip WebGL.
-    if (window.matchMedia("(hover: none)").matches) return;
+    // Touch screens have no hover: they get a press-and-drag ripple, plus one
+    // short automatic ripple when the image scrolls into view.
+    const isTouch = window.matchMedia("(hover: none)").matches;
 
     let renderer;
     try {
@@ -122,20 +123,21 @@ export default function DistortImage({ src }) {
       }
     };
 
-    const onEnter = () => {
-      target = 1;
-      start();
-    };
-    const onLeave = () => {
-      target = 0;
-      start();
-    };
     const onMove = (e) => {
       const rect = wrap.getBoundingClientRect();
       uniforms.uMouse.value.set(
         (e.clientX - rect.left) / rect.width,
         1 - (e.clientY - rect.top) / rect.height
       );
+    };
+    const onEnter = (e) => {
+      onMove(e); // start the ripple where the pointer or finger landed
+      target = 1;
+      start();
+    };
+    const onLeave = () => {
+      target = 0;
+      start();
     };
     // listen on the card so hovering the text side doesn't matter, only the image
     wrap.addEventListener("pointerenter", onEnter);
@@ -144,6 +146,28 @@ export default function DistortImage({ src }) {
 
     const observer = new ResizeObserver(resize);
     observer.observe(wrap);
+
+    // Touch only: one gentle ripple from the centre the first time the image
+    // is mostly on screen, so the effect is discoverable without a mouse.
+    let pulseTimer = 0;
+    let pulseObserver;
+    if (isTouch && "IntersectionObserver" in window) {
+      pulseObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          pulseObserver.disconnect();
+          uniforms.uMouse.value.set(0.5, 0.5);
+          target = 1;
+          start();
+          pulseTimer = window.setTimeout(() => {
+            target = 0;
+            start();
+          }, 1100);
+        },
+        { threshold: 0.6 }
+      );
+      pulseObserver.observe(wrap);
+    }
 
     new THREE.TextureLoader().load(src, (tex) => {
       if (disposed) {
@@ -163,6 +187,8 @@ export default function DistortImage({ src }) {
       disposed = true;
       cancelAnimationFrame(raf);
       observer.disconnect();
+      pulseObserver?.disconnect();
+      window.clearTimeout(pulseTimer);
       wrap.removeEventListener("pointerenter", onEnter);
       wrap.removeEventListener("pointerleave", onLeave);
       wrap.removeEventListener("pointermove", onMove);
