@@ -3,7 +3,7 @@
 // shown under the role.
 export const experience = [
   {
-    dates: "2026 — Present",
+    dates: "May 2026 — Present",
     title: "Co-Founder & Full-Stack Software Engineer",
     company: "Kinlo",
     summary:
@@ -11,7 +11,7 @@ export const experience = [
     tags: ["React Native", "Expo", "Node.js", "Firebase", "Stripe"],
   },
   {
-    dates: "2022 — Present",
+    dates: "Apr 2022 — Present",
     title: "Founder & Full-Stack Software Engineer",
     company: "Horn & Hooves",
     summary:
@@ -27,7 +27,7 @@ export const experience = [
     tags: ["React", "Node.js", "GraphQL", "MongoDB", "Socket.IO", "Stripe", "REST APIs"],
   },
   {
-    dates: "2020 — 2023",
+    dates: "Jun 2020 — Jun 2023",
     title: "3D Renderer / Visualization Artist",
     company: "WGI",
     summary:

@@ -434,7 +434,7 @@ main {
 }
 .job {
   display: grid;
-  grid-template-columns: 124px 1fr;
+  grid-template-columns: 150px 1fr;
   gap: 8px 20px;
 }
 .job-dates {
