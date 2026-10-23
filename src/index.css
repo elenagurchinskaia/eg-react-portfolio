@@ -453,6 +453,11 @@ main {
   font-size: 0.95rem;
   margin: 8px 0 12px;
 }
+.job p.job-meta {
+  color: var(--muted);
+  font: 400 0.75rem var(--mono);
+  margin: 2px 0 0;
+}
 
 .job p.clients-label {
   font: 600 0.7rem var(--mono);

@@ -1,11 +1,11 @@
 export const profile = {
   name: "Elena Gurchinskaia",
   role: "Full-Stack Software Engineer",
-  headline: "I build and design full-stack apps people love to use.",
+  headline: "I design and build web and mobile products.",
   intro:
-    "Full-stack developer with a strong foundation in design. I blend creative aesthetics with technical function to ship user-centered products with React, Node and Express.",
+    "Full-stack software engineer with 4+ years building web and mobile products with React, React Native and Node.js. I've shipped payments, event ticketing and real-time messaging.",
   about:
-    "Skilled in creative problem-solving and efficient project management, and driven by a commitment to addressing real user needs through thoughtful design, using technology for positive societal impact.",
+    "I came to software engineering from design, so I take a product from interface to data model to backend.",
   resume:
     "https://drive.google.com/file/d/1oo4h3K5DGPqM0HzeT-Wy4chrBQPInBca/view?usp=sharing",
   email: "elenagurchinskaia@gmail.com",

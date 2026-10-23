@@ -7,8 +7,8 @@ export const experience = [
     title: "Co-Founder & Full-Stack Software Engineer",
     company: "Kinlo",
     summary:
-      "Building a mobile-first community and event platform end to end: event creation, ticket sales, memberships, attendee management and messaging. Integrated the Anthropic Claude API for AI-powered event discovery, content generation and host analytics, backed by a secure server-side architecture with usage limits, cost controls and prompt-injection safeguards.",
-    tags: ["React Native", "Expo", "Node.js", "Firebase", "Stripe", "Claude API"],
+      "Building a mobile-first community and event platform: event creation, ticket sales, recurring memberships, attendee management, manual check-in and messaging, backed by a Firestore data model and a shared design system.",
+    tags: ["React Native", "Expo", "Node.js", "Firebase", "Stripe"],
   },
   {
     dates: "2022 — Present",
